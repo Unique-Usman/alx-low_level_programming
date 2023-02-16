@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * This program output some string
- * It also return 0
+ * main -This program output some string
+ * Return: It also return 0
  */
 
 
