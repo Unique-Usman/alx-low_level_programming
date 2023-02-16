@@ -1,6 +1,9 @@
 #include <stdio.h>
 
-/*This program output some string*/
+/**
+ * This program output some string
+ * It also return 0
+ */
 
 
 int main(void)
