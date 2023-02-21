@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
-*main: print _putchar
+*main - print _putchar
 *Return: return 0 
 */
+
 int main(void)
 {
 	char c[] = "_putchar";
@@ -12,5 +13,6 @@ int main(void)
 	{
 		_putchar(c[i]);
 	}
+	_putchar('\n');
 	return (0);
 }
