@@ -2,8 +2,7 @@
 #include <stdio.h>
 
 /**
- * _strpbrk - ocates the first occurrence in the string 
- * s of any of the bytes in the string accept
+ * _strpbrk - locates the first occur. of s in accept
  * @s: pointer to char
  * @accept: pointer to char
  * Return: pointer to char if found otherwise NULL
