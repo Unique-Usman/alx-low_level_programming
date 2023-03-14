@@ -18,4 +18,4 @@ void free_grid(int **grid, int height)
 		free(grid[i]);
 
 	free(grid);
-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}
+}

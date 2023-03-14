@@ -2,32 +2,44 @@
 #include "main.h"
 
 /**
- * *_strdup - copies the string given as parameter
- * @str: string to duplicate
+ * **alloc_grid - creates a two dimensional array of ints
+ * @width: width of the matrix
+ * @height: height of the matrix
  *
- * Return: pointer to the copied string (Success), NULL (Error)
+ * Return: pointer to the created matrix (Success)
+ * or NULL (Error)
  */
-char *_strdup(char *str)
+int **alloc_grid(int width, int height)
 {
-	char *dup;
-	unsigned int i, len;
+	int **arr;
+	int i, j;
 
-	i = 0;
-	len = 0;
-
-	if (str == NULL)
+	if (height <= 0 || width <= 0)
 		return (NULL);
 
-	while (str[len])
-		len++;
+	arr = (int **) malloc(sizeof(int *) * height);
 
-	dup = malloc(sizeof(char) * (len + 1));
-
-	if (dup == NULL)
+	if (arr == NULL)
 		return (NULL);
 
-	while ((dup[i] = str[i]) != '\0')
-		i++;
+	for (i = 0; i < height; i++)
+	{
+		arr[i] = (int *) malloc(sizeof(int) * width);
+		if (arr[i] == NULL)
+		{
+			free(arr);
+			for (j = 0; j <= i; j++)
+				free(arr[j]);
+			return (NULL);
+		}
+	}
 
-	return (dup);
+	for (i = 0; i < height; i++)
+	{
+		for (j = 0; j < width; j++)
+		{
+			arr[i][j] = 0;
+		}
+	}
+	return (arr);
 }
