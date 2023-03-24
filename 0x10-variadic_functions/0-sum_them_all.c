@@ -6,7 +6,6 @@
  *
  * Return: the resulting sum
  */
-
 int sum_them_all(const unsigned int n, ...)
 {	
 	unsigned int i;
