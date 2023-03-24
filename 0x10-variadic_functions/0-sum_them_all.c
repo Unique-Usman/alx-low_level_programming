@@ -7,16 +7,16 @@
  * Return: the resulting sum
  */
 int sum_them_all(const unsigned int n, ...)
-{	
+{
 	unsigned int i;
 	int sum = 0;
 	va_list mysum;
 
 	va_start(mysum, n);
 
-	for (i = 0; i < n; i++)	
+	for (i = 0; i < n; i++)
 		sum += va_arg(mysum, int);
-	
+
 	va_end(mysum);
 
 	return (sum);
