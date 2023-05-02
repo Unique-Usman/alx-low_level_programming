@@ -19,7 +19,7 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}else
 	{
-		tmp->str = str;
+		tmp->str = strdup(str);
 		tmp->next = *head;
 		*head = tmp;
 	}

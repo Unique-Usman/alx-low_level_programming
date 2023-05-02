@@ -8,7 +8,7 @@
  *
  *Return: address of the newly added node
  */
-list_t *add_node_end(listint_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *tmp;
 	list_t *tmp1;
@@ -17,7 +17,7 @@ list_t *add_node_end(listint_t **head, const char *str)
 	tmp = malloc(sizeof(list_t));
 	if (tmp == NULL)
 		return (NULL);
-	tmp->str = str;
+	tmp->str = strdup(str);
 	tmp->next = NULL;
 	if (tmp1 == NULL)
 	{
