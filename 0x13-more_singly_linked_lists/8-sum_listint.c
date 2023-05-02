@@ -2,7 +2,7 @@
 
 /**
  * sum_listint - sum the element in each node
- * @*head: head of the node
+ * @head: head of the node
  *
  * Return: sum of data in head
  */

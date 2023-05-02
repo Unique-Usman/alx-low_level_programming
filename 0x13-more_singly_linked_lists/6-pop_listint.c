@@ -2,7 +2,7 @@
 
 /**
  * poplistint - delete head and return headnode data 
- * @**head: the head pointer
+ * @head: the head pointer
  *
  * Return: head node data
  */

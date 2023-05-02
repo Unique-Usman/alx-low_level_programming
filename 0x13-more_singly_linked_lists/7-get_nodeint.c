@@ -1,8 +1,8 @@
 #include "lists.h"
 
 /**
- * *get_nodeint_at_index - return node at an index
- * @*head: head of the node
+ * get_nodeint_at_index - return node at an index
+ * @head: head of the node
  * @index: index of the return element
  *
  * Return: node at the index position
