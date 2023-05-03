@@ -1,53 +1,45 @@
-#include "main.h"
 #include <stdlib.h>
+#include "main.h"
 
 /**
- * string_nconcat - concatenates two strings.
- * @s1: first string.
- * @s2: second string.
- * @n: amount of bytes.
+ * *string_nconcat - concatenates n bytes of a string to another string
+ * @s1: string to append to
+ * @s2: string to concatenate from
+ * @n: number of bytes from s2 to concatenate to s1
  *
- * Return: pointer to the allocated memory.
- * if malloc fails, status value is equal to 98.
+ * Return: pointer to the resulting string
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr;
-	int i;
-	int count1 = 0;
-	int count2 = 0;
+	char *s;
+	unsigned int i = 0, j = 0, len = 0, len2 = 0;
 
-	while (s1[count1] != '\0')
-		count1++;
-	while (s2[count2] != '\0')
-		count2++;
-	ptr = malloc(count1 + n + 1);
-	if (n >= count2)
-	{
-		if (ptr == NULL)
-			exit(98);
-		for (i = 0; i < count1; i++)
-		{	
-			ptr[i] = s1[i]; 
-		}
-		for (i = 0; i < count2; i++)
-		{	
-			ptr[i] = s1[i]; 
-		}
-	}
+	while (s1 && s1[len])
+		len++;
+	while (s2 && s2[len2])
+		len2++;
+
+	if (n < len2)
+		s = malloc(sizeof(char) * (len + n + 1));
 	else
-	{	
-		if (ptr == NULL)
-			exit(98);
-		for (i = 0; i < count1; i++)
-		{	
-			ptr[i] = s1[i]; 
-		}
-		for (i = 0; i < n; i++)
-		{	
-			ptr[i] = s1[i]; 
-		}
+		s = malloc(sizeof(char) * (len + len2 + 1));
+
+	if (!s)
+		return (NULL);
+
+	while (i < len)
+	{
+		s[i] = s1[i];
+		i++;
 	}
-	ptr[count1 + n] = '\0';
-	return (ptr);
+
+	while (n < len2 && i < (len + n))
+		s[i++] = s2[j++];
+
+	while (n >= len2 && i < (len + len2))
+		s[i++] = s2[j++];
+
+	s[i] = '\0';
+
+	return (s);
 }
