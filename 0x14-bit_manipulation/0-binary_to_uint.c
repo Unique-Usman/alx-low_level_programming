@@ -27,11 +27,13 @@ int power(int pow)
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int n; 
+	unsigned int n;
 	int i;
 	int size;
 	const char *tmp;
 
+	if (b == NULL)
+		return (0);
 	tmp = b;
 	size = 0;
 	while (*tmp != '\0')
@@ -40,8 +42,6 @@ unsigned int binary_to_uint(const char *b)
 		tmp++;
 	}
 	n = 0;
-	if (b == NULL)
-		return (0);
 	for (i = 0; i < size; i++)
 	{
 		if (b[i] != '0' && b[i] != '1')
